@@ -1,2 +1,0 @@
-# vivuphuquoc-chill
-🇻🇳🇻🇳🌊🍃🏜️
