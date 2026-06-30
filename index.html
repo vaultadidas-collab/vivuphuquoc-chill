@@ -2531,7 +2531,10 @@
                         <a href="https://t.me/${SITE.telegram}" target="_blank" class="bg-[#229ED9] px-3 py-1.5 rounded-xl font-semibold"><i class="fa-brands fa-telegram"></i> Telegram</a>
                     </div>
                 </div>
-                <button onclick="document.getElementById('payment-modal').close()" class="w-full py-3 rounded-2xl border border-slate-300 font-medium text-sm">Đóng</button>`;
+                <div class="flex gap-3">
+                    <button onclick="document.getElementById('payment-modal').close()" class="flex-1 py-3 rounded-2xl border border-slate-300 font-medium text-sm">Đóng</button>
+                    <a href="cam-on.html?code=${encodeURIComponent(code)}" class="shine flex-[1.6] py-3 rounded-2xl bg-emerald-700 hover:bg-emerald-800 text-white font-semibold text-sm text-center transition inline-flex items-center justify-center gap-2"><i class="fa-solid fa-check"></i> Hoàn tất đặt tour</a>
+                </div>`;
             document.getElementById('payment-modal').showModal();
         }
 

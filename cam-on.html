@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cảm ơn bạn — Kodeeboyzz Tour Phú Quốc</title>
+    <meta name="robots" content="noindex">
+    <meta name="description" content="Cảm ơn bạn đã đặt tour Phú Quốc cùng Kodeeboyzz. Tụi mình sẽ liên hệ xác nhận sớm nhất qua Zalo/điện thoại.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- ============================================================
+         GOOGLE ADS — MÃ THEO DÕI CHUYỂN ĐỔI (CONVERSION TAG)
+         ⚠️ Dán đoạn mã Google Ads cấp cho mày vào ngay đây.
+         Lấy ở: Google Ads -> Mục tiêu -> Lượt chuyển đổi -> tạo
+         "Trang web" -> chọn cách "Thẻ Google" -> copy đoạn gtag.
+         Dạng mẫu (THAY bằng mã thật của mày):
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-XXXXXXXXXX');
+      gtag('event', 'conversion', {'send_to': 'AW-XXXXXXXXXX/YYYYYYYY'});
+    </script>
+
+         ============================================================ -->
+
+    <style>
+        @keyframes pop { 0%{transform:scale(0);opacity:0} 60%{transform:scale(1.15)} 100%{transform:scale(1);opacity:1} }
+        .pop { animation: pop .55s cubic-bezier(.2,.8,.3,1) both; }
+        .shine{position:relative;overflow:hidden;}
+        .shine::after{content:"";position:absolute;top:0;left:-130%;width:60%;height:100%;background:linear-gradient(120deg,transparent,rgba(255,255,255,.5),transparent);transform:skewX(-20deg);pointer-events:none;}
+        .shine:hover::after{animation:shineSweep .85s ease;}
+        @keyframes shineSweep{from{left:-130%}to{left:150%}}
+    </style>
+</head>
+<body class="min-h-screen bg-gradient-to-br from-emerald-50 via-white to-sky-50 flex items-center justify-center px-5 py-12">
+
+    <div class="w-full max-w-lg bg-white rounded-3xl shadow-xl border border-slate-100 px-7 py-10 sm:px-10 text-center">
+
+        <!-- Logo -->
+        <div class="flex items-center justify-center gap-x-3 mb-7">
+            <div class="w-9 h-9 bg-emerald-700 rounded-2xl flex items-center justify-center"><i class="fa-solid fa-island-tropical text-white"></i></div>
+            <span class="font-bold text-slate-800 text-2xl tracking-tighter">Kodeeboyzz</span>
+        </div>
+
+        <!-- Tick -->
+        <div class="pop w-20 h-20 mx-auto rounded-full bg-emerald-100 flex items-center justify-center mb-6">
+            <i class="fa-solid fa-check text-emerald-600 text-4xl"></i>
+        </div>
+
+        <h1 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">Cảm ơn bạn! 🌴</h1>
+        <p class="text-slate-600 mt-3 leading-relaxed">Yêu cầu đặt tour của bạn đã được gửi thành công. Kodeeboyzz sẽ liên hệ <b>xác nhận &amp; chốt lịch</b> sớm nhất qua Zalo/điện thoại.</p>
+
+        <!-- Mã đặt tour (nếu có) -->
+        <div id="code-box" class="hidden mt-5 inline-flex items-center gap-2 bg-emerald-50 text-emerald-800 font-semibold px-5 py-2.5 rounded-2xl">
+            <i class="fa-solid fa-receipt"></i> Mã đặt tour: <span id="booking-code" class="font-extrabold tracking-wide"></span>
+        </div>
+
+        <!-- CTA -->
+        <div class="mt-8 flex flex-col gap-3">
+            <a href="https://zalo.me/0775218017" target="_blank" rel="noopener"
+               class="shine inline-flex items-center justify-center gap-2 bg-emerald-700 hover:bg-emerald-800 text-white font-semibold px-6 py-3.5 rounded-2xl transition shadow-md">
+                <i class="fa-solid fa-comment-dots"></i> Nhắn Zalo để xác nhận nhanh
+            </a>
+            <a href="tel:+84775218017"
+               class="inline-flex items-center justify-center gap-2 border border-slate-300 hover:border-emerald-500 hover:text-emerald-700 text-slate-700 font-semibold px-6 py-3.5 rounded-2xl transition">
+                <i class="fa-solid fa-phone"></i> Gọi Hotline 0775 218 017
+            </a>
+            <a href="index.html"
+               class="inline-flex items-center justify-center gap-2 text-slate-500 hover:text-emerald-700 text-sm font-medium mt-1 transition">
+                <i class="fa-solid fa-arrow-left"></i> Về trang chủ
+            </a>
+        </div>
+
+        <div class="mt-8 pt-6 border-t border-slate-100 text-xs text-slate-400 leading-relaxed">
+            Cam kết hoàn tiền 100% nếu thời tiết xấu • Hủy miễn phí trước 48h<br>
+            © 2026 Kodeeboyzz · Đặc khu Phú Quốc, Việt Nam
+        </div>
+    </div>
+
+    <script>
+        // Hiện mã đặt tour nếu URL có ?code=PQ-xxxxxx
+        (function () {
+            try {
+                var code = new URLSearchParams(location.search).get('code');
+                if (code) {
+                    document.getElementById('booking-code').textContent = code;
+                    document.getElementById('code-box').classList.remove('hidden');
+                }
+            } catch (e) {}
+        })();
+    </script>
+</body>
+</html>
