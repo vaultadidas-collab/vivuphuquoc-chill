@@ -1,47 +1,86 @@
-# 🏝️ ViVu Phú Quốc
+# Kodeeboyzz — Tour Phú Quốc
 
-Trang web du lịch & đặt tour Phú Quốc — bán vé VinWonders, Vinpearl Safari, Sun World Hòn Thơm, tour 4 đảo, tour câu cá, thuê xe & dịch vụ đưa đón.
+Website bán tour & vé du lịch Phú Quốc: tour 4 đảo, cáp treo Hòn Thơm, VinWonders, Vinpearl Safari, lặn ngắm san hô, câu cá & hoàng hôn đảo ngọc.
 
-🔗 **Web live:** https://sonyvn-hub.github.io/islandboyzz/
+🔗 **Live:** https://kodeeboyzz.com
 
 ---
 
-## 📁 Cấu trúc
+## Là gì
+
+Một file HTML tự chạy (self-contained) — không cần build, không cần server. Tất cả hình ảnh nhúng base64, QR Zalo nhúng sẵn, video YouTube embed. Mở là chạy, kể cả offline hoặc GitHub Pages.
+
+## Tính năng
+
+- Bảng giá tour & vé 2026 (cáp treo, VinWonders/Safari combo)
+- Gallery video YouTube: Tour 4 đảo · Lặn ngắm san hô · Cáp treo & VinWonders
+- Đặt tour qua form + chuyển khoản (MB Bank / MoMo / ZaloPay / USDT-TON)
+- QR Zalo đặt tour nhanh
+- Đa ngôn ngữ (data-i18n)
+- Bản đồ Google Maps Phú Quốc
+- SEO: schema JSON-LD cho video & tour
+
+## Cấu trúc
 
 ```
-index.html              ← toàn bộ web (1 file, ảnh nhúng sẵn)
-videos/
- ├─ baibien-phuquoc.mp4   (video chính)
- ├─ hoanghon-tauca.mp4
- ├─ hoanghon-phuquoc.mp4
- └─ captreo-honthom.mp4
+.
+├── index.html      # Trang chính (đổi tên từ vip.html — xem bên dưới)
+├── CNAME           # Domain: kodeeboyzz.com
+└── README.md
 ```
 
-> Video phải nằm trong thư mục `videos/`, tên viết **thường** hết, đúng từng chữ.
+---
+
+## Deploy lên GitHub Pages
+
+1. Up `index.html`, `CNAME`, `README.md` lên repo.
+2. Vào **Settings → Pages → Source** chọn branch `main`, folder `/ (root)`, bấm **Save**.
+3. Đợi vài phút, site lên ở `https://<username>.github.io/<repo>` hoặc domain custom.
+
+> ⚠️ **Quan trọng:** GitHub Pages chỉ tự mở file tên `index.html`. File hiện tại là `vip.html` → **đổi tên thành `index.html`** trước khi up. Nếu muốn giữ `vip.html` thì phải vào link `kodeeboyzz.com/vip.html` mới ra.
 
 ---
 
-## 🔄 Cách cập nhật
+## Trỏ domain kodeeboyzz.com
 
-- **Sửa nội dung/giá:** mở `index.html` → Edit, hoặc up file mới đè lên.
-- **Đổi video:** up file `.mp4` vào thư mục `videos/` (chuẩn iPhone: H.264, +faststart).
-- Up bằng **Add file → Upload files** (kéo thả), tránh lỗi file lớn.
+### Bước 1 — Trong repo
+File `CNAME` đã có sẵn nội dung `kodeeboyzz.com`. Giữ nguyên, đừng xoá.
+
+### Bước 2 — Bên nhà cung cấp DNS (chỗ mua domain)
+Thêm các bản ghi sau:
+
+**Cho domain gốc (kodeeboyzz.com) — 4 bản ghi A:**
+
+| Type | Name | Value           |
+|------|------|-----------------|
+| A    | @    | 185.199.108.153 |
+| A    | @    | 185.199.109.153 |
+| A    | @    | 185.199.110.153 |
+| A    | @    | 185.199.111.153 |
+
+**Cho www (www.kodeeboyzz.com) — 1 bản ghi CNAME:**
+
+| Type  | Name | Value                    |
+|-------|------|--------------------------|
+| CNAME | www  | `<username>.github.io.`  |
+
+> Thay `<username>` bằng tên GitHub của mày.
+
+### Bước 3 — Trong GitHub
+Vào **Settings → Pages → Custom domain**, nhập `kodeeboyzz.com`, Save. Tick **Enforce HTTPS** (đợi vài tiếng để cấp chứng chỉ SSL).
+
+> DNS có thể mất từ vài phút đến 24–48 tiếng để cập nhật toàn cầu.
 
 ---
 
-## 📞 Liên hệ
+## Sửa nội dung
 
-- Zalo/Hotline: 0775218017
-- Facebook: https://www.facebook.com/share/18Hq15Rj9v/
-
----
-
-## 🤝 Đối tác
-
-- Adidas Authentic — https://kodeewear42xx-lang.github.io/adidas-hub/
-- SONY Hub (tài trợ hình ảnh & video) — https://vaultadidas-collab.github.io/kodeeboyzz-SONYHuB/
-- Adidas Hub — https://kodeewear42xx-lang.github.io/hub-adidasvault/
+Mở `index.html` bằng editor bất kỳ:
+- **Bảng giá / tour:** tìm theo tên tour trong HTML
+- **Thông tin thanh toán:** tìm `pay: {` (sửa số tài khoản / MoMo / ZaloPay)
+- **Video:** tìm `youtube-nocookie.com/embed/` rồi thay video ID
+- **Liên hệ / QR Zalo:** tìm `Liên Hệ` trong footer
 
 ---
 
-*© 2026 ViVu Phú Quốc · #kodeeboyzz*
+© 2026 Kodeeboyzz · Đặc khu Phú Quốc, Việt Nam
