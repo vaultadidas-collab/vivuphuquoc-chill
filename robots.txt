@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /cam-on.html
+
+Sitemap: https://kodeeboyzz.com/sitemap.xml
